@@ -16,6 +16,7 @@ dependencies:
   flutter_dotenv: ^5.1.0
   flutter_localization: ^0.2.1
   http: ^1.2.2
+  intl_utils: ^2.8.7
   otp: ^3.1.4
 
 dev_dependencies:
@@ -25,3 +26,11 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/icons_assets/
+
+  generate: true
+  # Specify the directory where your .arb files are located
+  
+    
