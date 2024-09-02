@@ -13,6 +13,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6
+  flutter_dotenv: ^5.1.0
+  flutter_localization: ^0.2.1
   http: ^1.2.2
   otp: ^3.1.4
 
