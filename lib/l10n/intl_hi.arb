@@ -1,0 +1,8 @@
+{
+    "@@locale":"hi",
+        "login":"लॉग इन करें",
+    "enterMobileNumber":"मोबाइल नंबर दर्ज करें",
+   "sendOtp": "ओटीपी भेजें",
+    "noAccount":"कोई खाता नहीं है?",
+    "clickHere":"यहाँ क्लिक करें"
+}

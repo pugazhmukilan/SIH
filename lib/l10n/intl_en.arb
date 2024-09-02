@@ -1,0 +1,8 @@
+{
+  "@@locale": "en",
+  "login": "Login",
+  "enterMobileNumber": "Enter your mobile number",
+  "sendOtp": "Send OTP",
+  "noAccount": "Don't have an account?",
+  "clickHere": "Click here"
+}
