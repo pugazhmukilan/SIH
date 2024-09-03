@@ -32,7 +32,7 @@ class SmsService {
         'Content-Type': 'application/x-www-form-urlencoded', // Ensure the correct content type
       },
       body: {
-        'To': '+$to', // Ensure the phone number is in E.164 format
+        'To': '+91${to}', // Ensure the phone number is in E.164 format
         'Channel': 'sms',
       },
     );

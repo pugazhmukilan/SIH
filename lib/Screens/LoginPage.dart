@@ -1,11 +1,11 @@
-import 'package:camera/camera.dart';
 import 'package:farmer_app/Constants/Colors.dart';
 import 'package:farmer_app/Constants/Text.dart';
-import 'package:farmer_app/Screens/CameraPage.dart';
+import 'package:farmer_app/Screens/Home/HomePage.dart';
+import 'package:farmer_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:farmer_app/generated/l10n.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+
+final TextEditingController phonenumberController = TextEditingController();
 
 class LoginPage extends StatefulWidget {
   LoginPage({super.key});
@@ -96,6 +96,7 @@ class _LoginPageState extends State<LoginPage> {
                               child: TextField(
                                 cursorColor: Color(0xff58733D),
                                 textAlign: TextAlign.center,
+                                controller: phonenumberController,
                                 inputFormatters: [
                                   FilteringTextInputFormatter.digitsOnly,
                                   LengthLimitingTextInputFormatter(10),
@@ -117,13 +118,12 @@ class _LoginPageState extends State<LoginPage> {
                     Padding(
                       padding: EdgeInsets.only(top: 40),
                       child: ElevatedButton(
-                          onPressed: () async {
-                            final cameras = await availableCameras();
-                            final firstCamera = cameras.first;
+                          onPressed: () {
+                            //context.read<AuthBloc>().add(RequestOTP(number: phonenumberController.text.trim()));
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => CameraPage()));
+                                    builder: (context) => HomePage()));
                           }, //Elevated button for send otp
                           style: ElevatedButton.styleFrom(
                               maximumSize: Size(250, 46),
@@ -151,16 +151,16 @@ class _LoginPageState extends State<LoginPage> {
                               color: kdarkgreen, fontSize: 12),
                         ),
                         TextButton(
-                          onPressed: () async {},
-                          child: Text(
-                            S.of(context).clickHere,
-                            style: ktextstyle.copyWith(
-                              color: kdarkgreen,
-                              decoration: TextDecoration.underline,
-                              fontSize: 12,
-                            ),
-                          ),
-                        ),
+                            onPressed: () {
+                              // Navigator.push(context, MaterialPageRoute(builder: (context)=>))
+                            }, //To navigate to the Signup page
+                            child: Text(
+                              S.of(context).clickHere,
+                              style: ktextstyle.copyWith(
+                                  color: kdarkgreen,
+                                  decoration: TextDecoration.underline,
+                                  fontSize: 12),
+                            )),
                       ],
                     ),
                   ],

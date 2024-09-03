@@ -1,14 +1,13 @@
-import 'package:camera/camera.dart';
-import 'package:farmer_app/Screens/CameraPage.dart';
-import 'package:farmer_app/Screens/LanguagePage.dart';
+import 'package:farmer_app/Screens/Home/HomePage.dart';
 import 'package:farmer_app/bloc/Camera_bloc/camera_bloc.dart';
 import 'package:farmer_app/firebase_options.dart';
+import 'package:farmer_app/generated/l10n.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+
 import 'bloc/Auth_bloc/auth_bloc.dart';
-import 'package:farmer_app/generated/l10n.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -51,37 +50,20 @@ class _MainAppState extends State<MainApp> {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         locale: _locale,
-        localizationsDelegates: const [
+        localizationsDelegates: [
           S.delegate,
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
         ],
-        supportedLocales: const [
+        supportedLocales: [
           Locale('en', ''),
           Locale('ta', ''),
           Locale('kn', ''),
           Locale('te', ''),
           Locale('hi', '')
         ],
-        home: LanguagePage(), // Use a separate widget for the home screen
-      ),
-    );
-  }
-}
-
-class AuthScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            // Now context.read<AuthBloc>() is valid here
-            context.read<AuthBloc>().add(RequestOTP(number: "+919843776143"));
-          },
-          child: Text("Send SMS"),
-        ),
+        home: HomePage(), // Use a separate widget for the home screen
       ),
     );
   }

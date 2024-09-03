@@ -1,3 +1,4 @@
+import 'package:camera/camera.dart';
 import 'package:farmer_app/Constants/Colors.dart';
 import 'package:farmer_app/Constants/Text.dart';
 import 'package:farmer_app/Screens/LoginPage.dart';

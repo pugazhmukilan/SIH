@@ -15,23 +15,28 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6
+  flutter_dotenv: ^5.1.0
   flutter_localization: ^0.2.1
+  flutter_map: ^7.0.2
   http: ^1.2.2
   image_picker: ^1.1.2
   intl_utils: ^2.8.7
+  latlong2: ^0.9.1
   linear_progress_bar: ^1.1.2
   otp: ^3.1.4
-  percent_indicator: ^4.2.3
+  webview_flutter: ^4.8.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
+  geolocator: ^8.2.0
 
 flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/icons_assets/
 
   generate: true
   # Specify the directory where your .arb files are located
