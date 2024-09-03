@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "clickHere": MessageLookupByLibrary.simpleMessage("यहाँ क्लिक करें"),
         "enterMobileNumber":
             MessageLookupByLibrary.simpleMessage("मोबाइल नंबर दर्ज करें"),
+        "listening": MessageLookupByLibrary.simpleMessage("सुनना"),
         "login": MessageLookupByLibrary.simpleMessage("लॉग इन करें"),
         "noAccount": MessageLookupByLibrary.simpleMessage("कोई खाता नहीं है?"),
         "sendOtp": MessageLookupByLibrary.simpleMessage("ओटीपी भेजें")

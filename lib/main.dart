@@ -1,5 +1,5 @@
-
-import 'package:farmer_app/Screens/Home/HomePage.dart';
+import 'package:farmer_app/Screens/Authentication/LoginPage.dart';
+import 'package:farmer_app/bloc/mic_bloc/mic_bloc.dart';
 import 'package:farmer_app/firebase_options.dart';
 import 'package:farmer_app/generated/l10n.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -7,14 +7,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'bloc/Auth_bloc/auth_bloc.dart';
+import 'bloc/bloc/auth_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
 
   runApp(MainApp());
 }
@@ -41,8 +40,15 @@ class _MainAppState extends State<MainApp> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => AuthBloc(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => AuthBloc(),
+        ),
+        BlocProvider(
+          create: (context) => MicBloc(),
+        ),
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         locale: _locale,
@@ -59,9 +65,8 @@ class _MainAppState extends State<MainApp> {
           Locale('te', ''),
           Locale('hi', '')
         ],
-        home: HomePage(), // Use a separate widget for the home screen
+        home: LoginPage(), // Use a separate widget for the home screen
       ),
     );
   }
 }
-

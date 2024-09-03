@@ -99,6 +99,16 @@ class S {
       args: [],
     );
   }
+
+  /// `listening..`
+  String get listening {
+    return Intl.message(
+      'listening..',
+      name: 'listening',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

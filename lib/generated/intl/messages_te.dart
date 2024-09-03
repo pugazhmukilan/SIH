@@ -26,6 +26,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ఇక్కడ క్లిక్ చేయండి"),
         "enterMobileNumber": MessageLookupByLibrary.simpleMessage(
             "మీ మొబైల్ నంబర్ ని ఎంటర్ చేయండి"),
+        "listening": MessageLookupByLibrary.simpleMessage("వినడం"),
         "login": MessageLookupByLibrary.simpleMessage("లాగిన్ చేయండి"),
         "noAccount": MessageLookupByLibrary.simpleMessage("ఖాతా లేదా?"),
         "sendOtp": MessageLookupByLibrary.simpleMessage("OTP పంపించండి")
