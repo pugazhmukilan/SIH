@@ -3,28 +3,38 @@ part of 'camera_bloc.dart';
 @immutable
 sealed class CameraState {}
 
-final class CameraLoading extends CameraState {}
+class CameraLoading extends CameraState {}
 
-final class CameraSuccessfull extends CameraState {
-  String Successmessage = "";
-  String Description = "";
-  String Cause = "";
-  String Solution = "";
-  int riskLevel = 0;
+class CameraSuccessfull extends CameraState {
+  final String successMessage;
+  final String description;
+  final String cause;
+  final String solution;
+  final String riskLevel;
   final File? imageFile;
+  final String diseasename;
   CameraSuccessfull({
-    required this.Cause,
-    required this.Description,
-    required this.Solution,
-    required this.Successmessage,
+    required this.diseasename,
+    required this.cause,
+    required this.description,
+    required this.solution,
+    required this.successMessage,
     required this.riskLevel,
     this.imageFile,
   });
+
+  @override
+  List<Object?> get props =>
+      [successMessage, description, cause, solution, riskLevel, imageFile];
 }
 
-final class CameraFailed extends CameraState {
-  String FailureMessage = "";
-  CameraFailed({required this.FailureMessage});
+class CameraFailed extends CameraState {
+  final String failureMessage;
+
+  CameraFailed({required this.failureMessage});
+
+  @override
+  List<Object?> get props => [failureMessage];
 }
 
-final class CameraInitial extends CameraState {}
+class CameraInitial extends CameraState {}

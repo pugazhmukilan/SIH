@@ -34,8 +34,12 @@ class _CameraPageState extends State<CameraPage> {
         // Convert XFile to File
         final File imageFile = File(image.path);
 
+        print(
+            "imge selected++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         // Add the ImageCaptured event with the File type
-        context.read<CameraBloc>().add(ImageCaptured(imageFile: imageFile));
+        context
+            .read<CameraBloc>()
+            .add(ImageCaptured(imageFile: File(image.path)));
       } else {
         print('No image selected');
       }
@@ -49,6 +53,8 @@ class _CameraPageState extends State<CameraPage> {
     return BlocBuilder<CameraBloc, CameraState>(
       builder: (context, state) {
         if (state is CameraSuccessfull) {
+          print(
+              "inside the successfull sgtate+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
           return Scaffold(
               backgroundColor: kwhite,
               appBar: AppBar(
@@ -94,12 +100,12 @@ class _CameraPageState extends State<CameraPage> {
                                 width:
                                     200, // Fixed width for single line of text
                                 child: Text(
-                                  "Phosphorus Deficiency in Leaf",
+                                  state.diseasename,
                                   style: ktextstyle.copyWith(
                                       fontWeight: FontWeight.w600,
                                       color: kdarkgreen,
                                       fontSize:
-                                          16), // Adjust text style as needed
+                                          17), // Adjust text style as needed
                                   maxLines:
                                       2, // Set the maximum number of lines
                                   overflow:
@@ -110,13 +116,13 @@ class _CameraPageState extends State<CameraPage> {
                                 width:
                                     200, // Fixed width for single line of text
                                 child: Text(
-                                  "Phosphorus Deficiency ",
+                                  state.diseasename,
                                   style: ktextstyle.copyWith(
                                       fontStyle: FontStyle.italic,
                                       fontWeight: FontWeight.w500,
                                       color: Colors.black,
                                       fontSize:
-                                          12), // Adjust text style as needed
+                                          13), // Adjust text style as needed
                                   maxLines:
                                       2, // Set the maximum number of lines
                                   overflow:
@@ -142,7 +148,7 @@ class _CameraPageState extends State<CameraPage> {
                                             fontWeight: FontWeight.w500,
                                             color: Colors.black,
                                             fontSize:
-                                                12), // Adjust text style as needed
+                                                13), // Adjust text style as needed
                                         maxLines:
                                             2, // Set the maximum number of lines
                                         overflow: TextOverflow
@@ -172,7 +178,8 @@ class _CameraPageState extends State<CameraPage> {
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) => LoginPage()));
+                                            builder: (context) =>
+                                                CameraPage()));
                                   }, //Elevated button for  regenerate
                                   style: ElevatedButton.styleFrom(
                                       maximumSize: Size(139, 50),
@@ -225,12 +232,7 @@ class _CameraPageState extends State<CameraPage> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 5.0, left: 15),
-                        child: Text(
-                          '• Vital Macronutrient: Phosphorus (P) is essential for plant growth and development, being a key component of DNA, RNA, and ATP.\n\n'
-                          '• Energy Transfer: Crucial for energy transfer processes, phosphorus is a major part of ATP, which powers various plant functions.\n\n'
-                          '• Photosynthesis: Plays a key role in photosynthesis by aiding in the formation of ATP, necessary for converting light energy into chemical energy.\n\n'
-                          '• Nutrient Movement: Facilitates nutrient movement within the plant by supporting root development and nutrient absorption.',
-                        ),
+                        child: Text(state.description),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 10.0, left: 5),
@@ -241,8 +243,7 @@ class _CameraPageState extends State<CameraPage> {
                       Padding(
                         padding: const EdgeInsets.only(
                             top: 5.0, left: 15, bottom: 10),
-                        child: Text(
-                            "Apply Phosphorus Fertilizer: Use phosphorus-rich fertilizers like superphosphate or organic options like bone meal. Adjust Soil pH: Ensure soil pH is between 6.0-7.5 for optimal phosphorus availability. Improve Soil Structure: Aerate soil and add organic matter to enhance root growth and nutrient absorption."),
+                        child: Text(state.solution),
                       ),
                       Container(
                         height: 70,
@@ -276,7 +277,7 @@ class _CameraPageState extends State<CameraPage> {
                                         LinearProgressBar.progressTypeLinear,
                                     minHeight: 16,
                                     // Use Linear progress
-                                    currentStep: 4,
+                                    currentStep: int.parse(state.riskLevel),
                                     progressColor: kdarkgreen,
                                     backgroundColor: klightgrey,
                                     borderRadius: BorderRadius.circular(15),
@@ -319,18 +320,24 @@ class _CameraPageState extends State<CameraPage> {
                   ),
                 ),
               ));
-        } else if (state is CameraLoading) {
+        }
+        if (state is CameraLoading) {
           return Scaffold(
-              // Your CameraLoading UI
-              );
-        } else if (state is CameraFailed) {
+            body: Center(child: CircularProgressIndicator()),
+            // Your CameraLoading UI
+          );
+        }
+
+        if (state is CameraFailed) {
+          print("camera error");
           return Scaffold(
+
               // Your CameraError UI
               );
         }
         return Scaffold(
             // Your Unknown state UI
-            );
+            body: Text("this is default"));
       },
     );
   }
