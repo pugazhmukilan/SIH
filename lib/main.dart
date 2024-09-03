@@ -1,5 +1,5 @@
 
-import 'package:farmer_app/Screens/LanguagePage.dart';
+import 'package:farmer_app/Screens/Home/HomePage.dart';
 import 'package:farmer_app/firebase_options.dart';
 import 'package:farmer_app/generated/l10n.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -59,7 +59,7 @@ class _MainAppState extends State<MainApp> {
           Locale('te', ''),
           Locale('hi', '')
         ],
-        home: LanguagePage(), // Use a separate widget for the home screen
+        home: HomePage(), // Use a separate widget for the home screen
       ),
     );
   }
