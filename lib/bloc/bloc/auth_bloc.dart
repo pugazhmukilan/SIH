@@ -1,6 +1,9 @@
 import 'dart:convert';
 
 import 'package:bloc/bloc.dart';
+import 'package:farmer_app/Screens/Authentication/FirebaseFunctions.dart';
+import 'package:farmer_app/Userinfo.dart';
+//import http as http
 import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
 
@@ -13,7 +16,50 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     SmsService sms = SmsService();
     sms.sendSms(event.number);
     });
+
+    on<GetUserInformation>((event, emit) async{
+    
+    emit(FetchingUserInformation());
+    await Future.delayed(Duration(seconds: 2));
+    emit((DataFetched()));
+    
+    //emit fetching user infmformation
+    //emit((Fetcheddata()));
+
+    });
+
+    on<FirebaseAuthenticateUser>((event,emit)async{
+      // call the function to login
+      emit((AuthenticationLoading()));
+      String? user = await  FirebaseAuthService().login(email:event.email,password: event.password);
+      print(user);
+      print("++++++++++++++++++++++++++++++++++++");
+      if(user != null){
+        //call fetch data event
+        ID = user;
+        emit((AuthenticationSuccessfull()));
+      }
+      else{
+      emit((AuthenticationFailed(error: "Invalid Credentials")));
+      }
+      });
+
+    on<CreateUser>((event,emit)async{
+      emit((AuthenticationLoading()));
+      String? user = await FirebaseAuthService().signup(name: event.name, place: event.location, phone: event.number, email: event.email, password: event.password);
+      print(user);
+      print("++++++++++++++++++++++++++++++++++++");
+      if(user != null){
+        ID = user;
+        emit((AuthenticationSuccessfull()));
+
+      }else{
+        emit((AuthenticationFailed(error: "Failed to create user")));
+      }
+    });
   }
+
+  
 }
 
 

@@ -120,6 +120,7 @@ class _LoginPageState extends State<LoginPage> {
                       child: ElevatedButton(
                           onPressed: () {
                             //context.read<AuthBloc>().add(RequestOTP(number: phonenumberController.text.trim()));
+                            //Ccontext.read<AuthBloc>().add(FirebaseAuthenticateUser(email:))
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(

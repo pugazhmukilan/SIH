@@ -26,6 +26,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("இங்கே கிளிக் செய்யவும்"),
         "enterMobileNumber": MessageLookupByLibrary.simpleMessage(
             "உங்கள் மொபைல் எண்ணை உள்ளிடுங்கள்"),
+        "listening": MessageLookupByLibrary.simpleMessage("கேட்கும்"),
         "login": MessageLookupByLibrary.simpleMessage("உள்நுழை"),
         "noAccount": MessageLookupByLibrary.simpleMessage("கணக்கு இல்லையா?"),
         "sendOtp": MessageLookupByLibrary.simpleMessage("OTP ஐ அனுப்பவும்")

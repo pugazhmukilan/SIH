@@ -4,5 +4,6 @@
   "enterMobileNumber": "Enter your mobile number",
   "sendOtp": "Send OTP",
   "noAccount": "Don't have an account?",
-  "clickHere": "Click here"
+  "clickHere": "Click here",
+  "listening": "listening.."
 }
