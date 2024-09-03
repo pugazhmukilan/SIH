@@ -1,4 +1,7 @@
+import 'package:camera/camera.dart';
+import 'package:farmer_app/Screens/CameraPage.dart';
 import 'package:farmer_app/Screens/LanguagePage.dart';
+import 'package:farmer_app/bloc/Camera_bloc/camera_bloc.dart';
 import 'package:farmer_app/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +15,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
   runApp(MainApp());
 }
 
@@ -37,18 +41,23 @@ class _MainAppState extends State<MainApp> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => AuthBloc(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => AuthBloc(),
+        ),
+        BlocProvider(create: (context) => CameraBloc())
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         locale: _locale,
-        localizationsDelegates: [
+        localizationsDelegates: const [
           S.delegate,
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
         ],
-        supportedLocales: [
+        supportedLocales: const [
           Locale('en', ''),
           Locale('ta', ''),
           Locale('kn', ''),

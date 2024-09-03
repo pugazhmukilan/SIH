@@ -1,5 +1,7 @@
+import 'package:camera/camera.dart';
 import 'package:farmer_app/Constants/Colors.dart';
 import 'package:farmer_app/Constants/Text.dart';
+import 'package:farmer_app/Screens/CameraPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:farmer_app/generated/l10n.dart';
@@ -115,7 +117,14 @@ class _LoginPageState extends State<LoginPage> {
                     Padding(
                       padding: EdgeInsets.only(top: 40),
                       child: ElevatedButton(
-                          onPressed: () {}, //Elevated button for send otp
+                          onPressed: () async {
+                            final cameras = await availableCameras();
+                            final firstCamera = cameras.first;
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => CameraPage()));
+                          }, //Elevated button for send otp
                           style: ElevatedButton.styleFrom(
                               maximumSize: Size(250, 46),
                               minimumSize: Size(180, 35),
@@ -142,14 +151,16 @@ class _LoginPageState extends State<LoginPage> {
                               color: kdarkgreen, fontSize: 12),
                         ),
                         TextButton(
-                            onPressed: () {}, //To navigate to the Signup page
-                            child: Text(
-                              S.of(context).clickHere,
-                              style: ktextstyle.copyWith(
-                                  color: kdarkgreen,
-                                  decoration: TextDecoration.underline,
-                                  fontSize: 12),
-                            )),
+                          onPressed: () async {},
+                          child: Text(
+                            S.of(context).clickHere,
+                            style: ktextstyle.copyWith(
+                              color: kdarkgreen,
+                              decoration: TextDecoration.underline,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ],
