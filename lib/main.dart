@@ -1,5 +1,6 @@
 import 'package:farmer_app/Screens/Authentication/LoginPage.dart';
 import 'package:farmer_app/Screens/Authentication/SignPage.dart';
+import 'package:farmer_app/Screens/Home/HomePage.dart';
 import 'package:farmer_app/Screens/LanguagePage.dart';
 import 'package:farmer_app/bloc/Camera_bloc/camera_bloc.dart';
 
@@ -70,7 +71,7 @@ class _MainAppState extends State<MainApp> {
           Locale('te', ''),
           Locale('hi', '')
         ],
-        home: LanguagePage(), // Use a separate widget for the home screen
+        home: HomePage(), // Use a separate widget for the home screen
       ),
     );
   }
