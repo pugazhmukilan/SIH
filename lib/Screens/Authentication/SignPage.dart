@@ -32,7 +32,10 @@ class _SignupPageState extends State<SignupPage> {
         LoadingDialog.show(context, message: "Creating user");
       }
       if (state is AuthenticationSuccessfull) {
-        context.read<AuthBloc>().add(GetUserInformation(ID: ID));
+        UserLanguage = Localizations.localeOf(context).languageCode;
+        context.read<AuthBloc>().add(GetUserInformation(
+              ID: ID,
+            ));
         Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(builder: (context) => HomePage()),

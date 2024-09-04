@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
-
+import 'package:farmer_app/Userinfo.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:translator/translator.dart';
 import 'package:bloc/bloc.dart';
 import 'package:camera/camera.dart';
 import 'package:meta/meta.dart';
@@ -39,18 +41,86 @@ class CameraBloc extends Bloc<CameraEvent, CameraState> {
           print("$diseaseData");
           String diseaseName = diseaseData.keys
               .first; //This is given as data in the structure but eventhough it is set dynamically so changes acoordinly.
+
           var brownSpotInfo = DiseaseInfo.fromMap(diseaseData['data']!);
-          print(
-              "emitting successgull++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-          emit(CameraSuccessfull(
-            diseasename: brownSpotInfo.diseasename,
-            cause: brownSpotInfo.cause,
-            description: brownSpotInfo.description,
-            solution: brownSpotInfo.solution,
-            successMessage: brownSpotInfo.successMessage,
-            riskLevel: (brownSpotInfo.riskLevel),
-            imageFile: event.imageFile,
-          ));
+          String translatedCause = '';
+          String translatedSolution = '';
+          String translatedName = '';
+          String translatedDescription = '';
+          String translatedSuccessMessage = '';
+          //Running this to start the function defined to set the variable.
+          Future<void> someFunction() async {
+            print("Entered the translating function");
+
+            // Perform all the translations asynchronously
+            translatedCause =
+                await translatingText(brownSpotInfo.cause, '$UserLanguage');
+            translatedSolution =
+                await translatingText(brownSpotInfo.solution, '$UserLanguage');
+            translatedName = await translatingText(
+                brownSpotInfo.diseasename, '$UserLanguage');
+            translatedDescription = await translatingText(
+                brownSpotInfo.description, '$UserLanguage');
+            translatedSuccessMessage = await translatingText(
+                brownSpotInfo.successMessage, '$UserLanguage');
+
+            print("+++++++++++++++++++++++++++++++" +
+                translatedSolution); // This will print the translated text
+            print("Emitting successful state");
+
+            // /  Emit the success state after translations are done
+            emit(CameraSuccessfull(
+              diseasename: translatedName,
+              cause: translatedCause,
+              description: translatedDescription,
+              solution: translatedSolution,
+              successMessage: translatedSuccessMessage,
+              riskLevel: brownSpotInfo.riskLevel,
+              imageFile: event.imageFile,
+            ));
+          }
+
+// Call the function and wait for it to complete
+          await someFunction();
+
+          // Assuming this is inside an async function
+          //   String transalatedCause = '';
+          //   String translatedSolution = '';
+          //   String transalatedname = '';
+          //   String translatedDiscription = '';
+          //   String transalatedsuccessMesssage = '';
+          //   Future<String> someFunction() async {
+          //     print("Entered the translating function");
+
+          //     // Perform all the translations asynchronously
+          //     transalatedCause = await translatingText(brownSpotInfo.cause, 'ta');
+          //     translatedSolution =
+          //         await translatingText(brownSpotInfo.solution, 'ta');
+          //     transalatedname =
+          //         await translatingText(brownSpotInfo.diseasename, 'ta');
+          //     translatedDiscription =
+          //         await translatingText(brownSpotInfo.description, 'ta');
+          //     transalatedsuccessMesssage =
+          //         await translatingText(brownSpotInfo.successMessage, 'ta');
+
+          //     print(translatedSolution); // This will print the translated text
+          //     print("Emitting successful state");
+
+          //     // If `future` is necessary, ensure it completes before emitting
+
+          //     // Emit the success state
+          //   }
+
+          //  await someFunction();
+          //   emit(CameraSuccessfull(
+          //     diseasename: transalatedname,
+          //     cause: transalatedCause,
+          //     description: translatedDiscription,
+          //     solution: translatedSolution,
+          //     successMessage: transalatedsuccessMesssage,
+          //     riskLevel: brownSpotInfo.riskLevel,
+          //     imageFile: event.imageFile,
+          //   ));
         } else {
           print("Api failed++++++++++++++++++++++++++++++");
           emit(CameraFailed(failureMessage: "Api error"));
@@ -103,4 +173,14 @@ class DiseaseInfo {
       riskLevel: map['emergency_level'] ?? '',
     );
   }
+}
+
+Future<String> translatingText(String inputText, String selectedOutCode) async {
+  var translator = GoogleTranslator();
+
+  // Translate the text and return the result
+  var translatedText =
+      await translator.translate(inputText, from: 'en', to: selectedOutCode);
+
+  return translatedText.text; // Return the translated text as a String
 }

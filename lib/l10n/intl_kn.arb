@@ -10,5 +10,14 @@
   "clickHere": "ಇಲ್ಲಿ ಕ್ಲಿಕ್ ಮಾಡಿ",
   "listening": "ಕೇಳುವುದು",
   "Haveaccount":"ಖಾತೆ ಇದೆಯೆ?",
-  "Createaccount":"ಖಾತೆ ರಚಿಸಿ"
+  "Createaccount":"ಖಾತೆ ರಚಿಸಿ",
+    "description": "ವಿವರಣೆ",
+      "riskLifePrediction": "ಅಪಾಯ ಜೀವನ ಮುನ್ಸೂಚನೆ",
+  "low": "ಕಡಿಮೆ",
+  "high": "ಹೆಚ್ಚು",
+  "solution": "ಪರಿಹಾರ",
+  "deficiency": "ಅಪೂರ್ಣತೆ",
+    "consult_doctor": "ವೈದ್ಯರನ್ನು ಸಲಹೆ ಹೊಂದಿ",
+  "regenerate": "ಮರುಜನ್ಮ",
+  "report_of_analysis": "ವಿಶ್ಲೇಷಣೆಯ ವರದಿ"
 }

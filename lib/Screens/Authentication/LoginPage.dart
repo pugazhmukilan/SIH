@@ -32,7 +32,10 @@ class _LoginPageState extends State<LoginPage> {
         LoadingDialog.show(context, message: 'Logging in...');
       }
       if (state is AuthenticationSuccessfull) {
-        context.read<AuthBloc>().add(GetUserInformation(ID: ID));
+        UserLanguage = Localizations.localeOf(context).languageCode;
+        context.read<AuthBloc>().add(GetUserInformation(
+              ID: ID,
+            ));
         Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(builder: (context) => HomePage()),
@@ -122,20 +125,21 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           ),
                           _buildPasswordField(passwordController),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 10.0),
+                          Center(
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Text(
-                                  //If you dont have an account
-                                  S.of(context).noAccount,
-                                  style: ktextstyle.copyWith(
-                                    color: kdarkgreen,
-                                    fontSize: 12,
+                                Container(
+                                  child: Text(
+                                    //If you dont have an account
+                                    S.of(context).noAccount,
+                                    style: ktextstyle.copyWith(
+                                      color: kdarkgreen,
+                                      fontSize: 12,
+                                    ),
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
                                   ),
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
                                 ),
                                 TextButton(
                                   onPressed: () {

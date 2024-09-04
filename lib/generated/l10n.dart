@@ -60,6 +60,36 @@ class S {
     );
   }
 
+  /// `Risk Life Prediction`
+  String get riskLifePrediction {
+    return Intl.message(
+      'Risk Life Prediction',
+      name: 'riskLifePrediction',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Low`
+  String get low {
+    return Intl.message(
+      'Low',
+      name: 'low',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `High`
+  String get high {
+    return Intl.message(
+      'High',
+      name: 'high',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Enter your name`
   String get name {
     return Intl.message(
@@ -140,6 +170,36 @@ class S {
     );
   }
 
+  /// `Description`
+  String get description {
+    return Intl.message(
+      'Description',
+      name: 'description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Solution`
+  String get solution {
+    return Intl.message(
+      'Solution',
+      name: 'solution',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Deficiency`
+  String get deficiency {
+    return Intl.message(
+      'Deficiency',
+      name: 'deficiency',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `listening..`
   String get listening {
     return Intl.message(
@@ -165,6 +225,36 @@ class S {
     return Intl.message(
       'Create an account',
       name: 'Createaccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Consult a doctor`
+  String get consult_doctor {
+    return Intl.message(
+      'Consult a doctor',
+      name: 'consult_doctor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Re-generate`
+  String get regenerate {
+    return Intl.message(
+      'Re-generate',
+      name: 'regenerate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Report of analysis`
+  String get report_of_analysis {
+    return Intl.message(
+      'Report of analysis',
+      name: 'report_of_analysis',
       desc: '',
       args: [],
     );

@@ -25,6 +25,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "Createaccount": MessageLookupByLibrary.simpleMessage("खाता बनाएं"),
         "Haveaccount": MessageLookupByLibrary.simpleMessage("खाता है?"),
         "clickHere": MessageLookupByLibrary.simpleMessage("यहाँ क्लिक करें"),
+        "consult_doctor":
+            MessageLookupByLibrary.simpleMessage("डॉक्टर से परामर्श करें"),
+        "deficiency": MessageLookupByLibrary.simpleMessage("कमी"),
+        "description": MessageLookupByLibrary.simpleMessage("विवरण"),
         "enterMobileNumber":
             MessageLookupByLibrary.simpleMessage("मोबाइल नंबर दर्ज करें"),
         "enteremailid":
@@ -33,10 +37,19 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("अपना पासवर्ड दर्ज करें"),
         "enteryourlocation":
             MessageLookupByLibrary.simpleMessage(" अपना स्थान दर्ज करें"),
+        "high": MessageLookupByLibrary.simpleMessage("उच्च"),
         "listening": MessageLookupByLibrary.simpleMessage("सुनना"),
         "login": MessageLookupByLibrary.simpleMessage("लॉग इन करें"),
+        "low": MessageLookupByLibrary.simpleMessage("कम"),
         "name": MessageLookupByLibrary.simpleMessage("अपना नाम दर्ज करें"),
         "noAccount": MessageLookupByLibrary.simpleMessage("कोई खाता नहीं है?"),
-        "sendOtp": MessageLookupByLibrary.simpleMessage("ओटीपी भेजें")
+        "regenerate":
+            MessageLookupByLibrary.simpleMessage("फिर से उत्पन्न करें"),
+        "report_of_analysis":
+            MessageLookupByLibrary.simpleMessage("विश्लेषण रिपोर्ट"),
+        "riskLifePrediction":
+            MessageLookupByLibrary.simpleMessage("जोखिम जीवन भविष्यवाणी"),
+        "sendOtp": MessageLookupByLibrary.simpleMessage("ओटीपी भेजें"),
+        "solution": MessageLookupByLibrary.simpleMessage("समाधान")
       };
 }

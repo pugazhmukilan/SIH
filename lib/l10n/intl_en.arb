@@ -1,6 +1,9 @@
 {
   "@@locale": "en",
   "login": "Login",
+    "riskLifePrediction": "Risk Life Prediction",
+  "low": "Low",
+  "high": "High",
   "name":"Enter your name",
   "enterMobileNumber": "Enter your mobile number",
   "enteremailid":"Enter your email id",
@@ -9,7 +12,13 @@
   "sendOtp": "Send OTP",
   "noAccount": "Don't have an account?",
   "clickHere": "Click here",
+    "description": "Description",
+  "solution": "Solution",
+  "deficiency": "Deficiency",
   "listening": "listening..",
   "Haveaccount":"Have an account?",
-  "Createaccount":"Create an account"
+  "Createaccount":"Create an account",
+    "consult_doctor": "Consult a doctor",
+  "regenerate": "Re-generate",
+  "report_of_analysis": "Report of analysis"
 }

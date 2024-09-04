@@ -1,6 +1,9 @@
 {
   "@@locale":"te",
   "login": "లాగిన్ చేయండి",
+    "description": "వివరణ",
+  "solution": "పరిష్కారం",
+  "deficiency": "లోపం",
   "name":"మీ పేరు నమోదు చేయండి",
   "enterMobileNumber": "మీ మొబైల్ నంబర్ ని ఎంటర్ చేయండి",
   "enteremailid":"మీ ఇమెయిల్ IDని నమోదు చేయండి",
@@ -11,5 +14,11 @@
   "clickHere": "ఇక్కడ క్లిక్ చేయండి",
   "listening" :"వినడం",
   "Haveaccount":"ఖాతా ఉందా?",
-  "Createaccount":"ఖాతా సృష్టించండి"
+  "Createaccount":"ఖాతా సృష్టించండి",
+    "consult_doctor": "డాక్టర్‌ను సంప్రదించండి",
+  "regenerate": "మరల ఉత్పత్తి చేయండి",
+  "report_of_analysis": "విశ్లేషణ నివేదిక",
+    "riskLifePrediction": "ప్రమాద జీవితం అంచనా",
+  "low": "తక్కువ",
+  "high": "ఎక్కువ"
 }

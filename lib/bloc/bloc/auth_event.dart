@@ -17,7 +17,10 @@ final class RequestOTP extends AuthEvent {
 
 final class GetUserInformation extends AuthEvent {
   final String ID;
-  GetUserInformation({required this.ID});
+
+  GetUserInformation({
+    required this.ID,
+  });
 }
 
 final class FirebaseAuthenticateUser extends AuthEvent {
@@ -39,3 +42,5 @@ final class CreateUser extends AuthEvent {
       required this.name,
       required this.location});
 }
+
+final class AutoLoggerCheck extends AuthEvent {}

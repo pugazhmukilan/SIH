@@ -25,6 +25,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "Createaccount": MessageLookupByLibrary.simpleMessage("ಖಾತೆ ರಚಿಸಿ"),
         "Haveaccount": MessageLookupByLibrary.simpleMessage("ಖಾತೆ ಇದೆಯೆ?"),
         "clickHere": MessageLookupByLibrary.simpleMessage("ಇಲ್ಲಿ ಕ್ಲಿಕ್ ಮಾಡಿ"),
+        "consult_doctor":
+            MessageLookupByLibrary.simpleMessage("ವೈದ್ಯರನ್ನು ಸಲಹೆ ಹೊಂದಿ"),
+        "deficiency": MessageLookupByLibrary.simpleMessage("ಅಪೂರ್ಣತೆ"),
+        "description": MessageLookupByLibrary.simpleMessage("ವಿವರಣೆ"),
         "enterMobileNumber": MessageLookupByLibrary.simpleMessage(
             "ನಿಮ್ಮ ಮೊಬೈಲ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ"),
         "enteremailid": MessageLookupByLibrary.simpleMessage(
@@ -33,10 +37,18 @@ class MessageLookup extends MessageLookupByLibrary {
             "ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ನಮೂದಿಸಿ"),
         "enteryourlocation":
             MessageLookupByLibrary.simpleMessage("ನಿಮ್ಮ ಸ್ಥಳವನ್ನು ನಮೂದಿಸಿ"),
+        "high": MessageLookupByLibrary.simpleMessage("ಹೆಚ್ಚು"),
         "listening": MessageLookupByLibrary.simpleMessage("ಕೇಳುವುದು"),
         "login": MessageLookupByLibrary.simpleMessage("ಲಾಗಿನ್ ಮಾಡಿ"),
+        "low": MessageLookupByLibrary.simpleMessage("ಕಡಿಮೆ"),
         "name": MessageLookupByLibrary.simpleMessage("ನಿಮ್ಮ ಹೆಸರನ್ನು ನಮೂದಿಸಿ"),
         "noAccount": MessageLookupByLibrary.simpleMessage("ಖಾತೆ ಇಲ್ಲವೇ?"),
-        "sendOtp": MessageLookupByLibrary.simpleMessage("OTP ಕಳುಹಿಸಿ")
+        "regenerate": MessageLookupByLibrary.simpleMessage("ಮರುಜನ್ಮ"),
+        "report_of_analysis":
+            MessageLookupByLibrary.simpleMessage("ವಿಶ್ಲೇಷಣೆಯ ವರದಿ"),
+        "riskLifePrediction":
+            MessageLookupByLibrary.simpleMessage("ಅಪಾಯ ಜೀವನ ಮುನ್ಸೂಚನೆ"),
+        "sendOtp": MessageLookupByLibrary.simpleMessage("OTP ಕಳುಹಿಸಿ"),
+        "solution": MessageLookupByLibrary.simpleMessage("ಪರಿಹಾರ")
       };
 }

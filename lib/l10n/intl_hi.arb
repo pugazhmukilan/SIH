@@ -6,10 +6,19 @@
     "enteremailid":"अपना ईमेल आईडी दर्ज करें",
     "enterpassword":"अपना पासवर्ड दर्ज करें",
     "enteryourlocation":" अपना स्थान दर्ज करें",
+      "riskLifePrediction": "जोखिम जीवन भविष्यवाणी",
+  "low": "कम",
+  "high": "उच्च",
    "sendOtp": "ओटीपी भेजें",
     "noAccount":"कोई खाता नहीं है?",
+      "description": "विवरण",
+  "solution": "समाधान",
+  "deficiency": "कमी",
     "clickHere":"यहाँ क्लिक करें",
     "listening":"सुनना",
     "Haveaccount":"खाता है?",
-    "Createaccount":"खाता बनाएं"
+    "Createaccount":"खाता बनाएं",
+      "consult_doctor": "डॉक्टर से परामर्श करें",
+  "regenerate": "फिर से उत्पन्न करें",
+  "report_of_analysis": "विश्लेषण रिपोर्ट"
 }

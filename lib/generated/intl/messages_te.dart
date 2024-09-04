@@ -27,6 +27,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "Haveaccount": MessageLookupByLibrary.simpleMessage("ఖాతా ఉందా?"),
         "clickHere":
             MessageLookupByLibrary.simpleMessage("ఇక్కడ క్లిక్ చేయండి"),
+        "consult_doctor":
+            MessageLookupByLibrary.simpleMessage("డాక్టర్‌ను సంప్రదించండి"),
+        "deficiency": MessageLookupByLibrary.simpleMessage("లోపం"),
+        "description": MessageLookupByLibrary.simpleMessage("వివరణ"),
         "enterMobileNumber": MessageLookupByLibrary.simpleMessage(
             "మీ మొబైల్ నంబర్ ని ఎంటర్ చేయండి"),
         "enteremailid": MessageLookupByLibrary.simpleMessage(
@@ -35,10 +39,19 @@ class MessageLookup extends MessageLookupByLibrary {
             "మీ పాస్‌వర్డ్‌ను నమోదు చేయండి"),
         "enteryourlocation":
             MessageLookupByLibrary.simpleMessage("మీ ప్రాంతాన్ని నమోదు చేయండి"),
+        "high": MessageLookupByLibrary.simpleMessage("ఎక్కువ"),
         "listening": MessageLookupByLibrary.simpleMessage("వినడం"),
         "login": MessageLookupByLibrary.simpleMessage("లాగిన్ చేయండి"),
+        "low": MessageLookupByLibrary.simpleMessage("తక్కువ"),
         "name": MessageLookupByLibrary.simpleMessage("మీ పేరు నమోదు చేయండి"),
         "noAccount": MessageLookupByLibrary.simpleMessage("ఖాతా లేదా?"),
-        "sendOtp": MessageLookupByLibrary.simpleMessage("OTP పంపించండి")
+        "regenerate":
+            MessageLookupByLibrary.simpleMessage("మరల ఉత్పత్తి చేయండి"),
+        "report_of_analysis":
+            MessageLookupByLibrary.simpleMessage("విశ్లేషణ నివేదిక"),
+        "riskLifePrediction":
+            MessageLookupByLibrary.simpleMessage("ప్రమాద జీవితం అంచనా"),
+        "sendOtp": MessageLookupByLibrary.simpleMessage("OTP పంపించండి"),
+        "solution": MessageLookupByLibrary.simpleMessage("పరిష్కారం")
       };
 }

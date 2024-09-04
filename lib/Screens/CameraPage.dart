@@ -1,15 +1,13 @@
-import 'package:camera/camera.dart';
+import 'dart:io';
+
 import 'package:farmer_app/Constants/Colors.dart';
 import 'package:farmer_app/Constants/Text.dart';
 import 'package:farmer_app/Screens/Plant_diagonse/plant_types.dart';
-import 'package:farmer_app/widgets/CustomSnackBar.dart';
-
+import 'package:farmer_app/bloc/Camera_bloc/camera_bloc.dart';
+import 'package:farmer_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:farmer_app/bloc/Camera_bloc/camera_bloc.dart';
-import 'dart:io';
-
 import 'package:linear_progress_bar/linear_progress_bar.dart';
 
 class CameraPage extends StatefulWidget {
@@ -62,8 +60,8 @@ class _CameraPageState extends State<CameraPage> {
               backgroundColor: kwhite,
               appBar: AppBar(
                   backgroundColor: kwhite,
-                  title: const Text(
-                    'Report of analysis',
+                  title: Text(
+                    S.of(context).report_of_analysis,
                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
                   )),
               body: Padding(
@@ -146,7 +144,7 @@ class _CameraPageState extends State<CameraPage> {
                                       width:
                                           200, // Fixed width for single line of text
                                       child: Text(
-                                        "Deficiency ",
+                                        S.of(context).deficiency,
                                         style: ktextstyle.copyWith(
                                             fontWeight: FontWeight.w500,
                                             color: Colors.black,
@@ -196,7 +194,7 @@ class _CameraPageState extends State<CameraPage> {
                                       )),
                                   child: Center(
                                     child: Text(
-                                      "Re-generate",
+                                      S.of(context).regenerate,
                                       style: ktextstyle.copyWith(
                                           fontSize: 14,
                                           fontWeight: FontWeight.w500,
@@ -217,7 +215,7 @@ class _CameraPageState extends State<CameraPage> {
                                             BorderRadius.circular(15))),
                                 child: Center(
                                   child: Text(
-                                    "Consult a doctor",
+                                    S.of(context).consult_doctor,
                                     style: ktextstyle.copyWith(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w500,
@@ -230,7 +228,7 @@ class _CameraPageState extends State<CameraPage> {
                       Padding(
                         padding: const EdgeInsets.only(top: 18.0, left: 5),
                         child: Text(
-                          "Description",
+                          S.of(context).description,
                           style: ktextstyle.copyWith(
                               fontSize: 16, fontWeight: FontWeight.w600),
                         ),
@@ -241,7 +239,7 @@ class _CameraPageState extends State<CameraPage> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 10.0, left: 5),
-                        child: Text("Solution",
+                        child: Text(S.of(context).solution,
                             style: ktextstyle.copyWith(
                                 fontSize: 16, fontWeight: FontWeight.w600)),
                       ),
@@ -265,7 +263,7 @@ class _CameraPageState extends State<CameraPage> {
                               padding:
                                   const EdgeInsets.only(top: 5.0, left: 8.0),
                               child: Text(
-                                "Risk Life Prediction",
+                                S.of(context).riskLifePrediction,
                                 style: ktextstyle.copyWith(
                                     color: kdarkgreen, fontSize: 14),
                               ),
@@ -301,7 +299,7 @@ class _CameraPageState extends State<CameraPage> {
                                     padding: const EdgeInsets.only(
                                         top: 5.0, left: 5.0),
                                     child: Text(
-                                      "low",
+                                      S.of(context).low,
                                       style: ktextstyle.copyWith(
                                           color: kdarkgreen, fontSize: 12),
                                     ),
@@ -310,7 +308,7 @@ class _CameraPageState extends State<CameraPage> {
                                     padding: const EdgeInsets.only(
                                         top: 5.0, left: 5.0),
                                     child: Text(
-                                      "high",
+                                      S.of(context).high,
                                       style: ktextstyle.copyWith(
                                           color: kdarkgreen, fontSize: 12),
                                     ),

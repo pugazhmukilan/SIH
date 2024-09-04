@@ -1,6 +1,9 @@
 {
   "@@locale":"ta",
   "login": "உள்நுழை",
+    "description": "விளக்கம்",
+  "solution": "தீர்வு",
+  "deficiency": "குறைவு",
   "name":"உங்கள் பெயரை பதிவிடவும்",
   "enterMobileNumber": "உங்கள் மொபைல் எண்ணை பதிவிடவும்",
   "enteremailid":" உங்கள் மின்னஞ்சல் ஐடியை பதிவிடவும்",
@@ -8,8 +11,14 @@
   "enteryourlocation":"உங்கள் இடத்தை பதிவிடவும்",
   "sendOtp": "OTP ஐ அனுப்பவும்",
   "noAccount": "கணக்கு இல்லையா?",
-  "clickHere": "கிளிக் செய்யவும்",
+  "clickHere": "கிளிக்",
   "listening" : "கேட்கும்",
+    "riskLifePrediction": "ஆபத்து வாழ்க்கை முன்னறிவிப்பு",
+  "low": "குறைந்த",
+  "high": "உயர்ந்த",
   "Createaccount":"கணக்கை உருவாக்கவும்",
-  "Haveaccount":"கணக்கு உள்ளதா?"
+  "Haveaccount":"கணக்கு உள்ளதா?",
+    "consult_doctor": "மருத்துவரை அணுகவும்",
+  "regenerate": "மீண்டும் உருவாக்கவும்",
+  "report_of_analysis": "பரிசோதனை அறிக்கை"
 }

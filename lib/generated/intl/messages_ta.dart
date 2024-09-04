@@ -25,7 +25,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "Createaccount":
             MessageLookupByLibrary.simpleMessage("கணக்கை உருவாக்கவும்"),
         "Haveaccount": MessageLookupByLibrary.simpleMessage("கணக்கு உள்ளதா?"),
-        "clickHere": MessageLookupByLibrary.simpleMessage("கிளிக் செய்யவும்"),
+        "clickHere": MessageLookupByLibrary.simpleMessage("கிளிக்"),
+        "consult_doctor":
+            MessageLookupByLibrary.simpleMessage("மருத்துவரை அணுகவும்"),
+        "deficiency": MessageLookupByLibrary.simpleMessage("குறைவு"),
+        "description": MessageLookupByLibrary.simpleMessage("விளக்கம்"),
         "enterMobileNumber": MessageLookupByLibrary.simpleMessage(
             "உங்கள் மொபைல் எண்ணை பதிவிடவும்"),
         "enteremailid": MessageLookupByLibrary.simpleMessage(
@@ -34,10 +38,19 @@ class MessageLookup extends MessageLookupByLibrary {
             "உங்கள் கடவுச்சொல்லை பதிவிடவும்"),
         "enteryourlocation":
             MessageLookupByLibrary.simpleMessage("உங்கள் இடத்தை பதிவிடவும்"),
+        "high": MessageLookupByLibrary.simpleMessage("உயர்ந்த"),
         "listening": MessageLookupByLibrary.simpleMessage("கேட்கும்"),
         "login": MessageLookupByLibrary.simpleMessage("உள்நுழை"),
+        "low": MessageLookupByLibrary.simpleMessage("குறைந்த"),
         "name": MessageLookupByLibrary.simpleMessage("உங்கள் பெயரை பதிவிடவும்"),
         "noAccount": MessageLookupByLibrary.simpleMessage("கணக்கு இல்லையா?"),
-        "sendOtp": MessageLookupByLibrary.simpleMessage("OTP ஐ அனுப்பவும்")
+        "regenerate":
+            MessageLookupByLibrary.simpleMessage("மீண்டும் உருவாக்கவும்"),
+        "report_of_analysis":
+            MessageLookupByLibrary.simpleMessage("பரிசோதனை அறிக்கை"),
+        "riskLifePrediction": MessageLookupByLibrary.simpleMessage(
+            "ஆபத்து வாழ்க்கை முன்னறிவிப்பு"),
+        "sendOtp": MessageLookupByLibrary.simpleMessage("OTP ஐ அனுப்பவும்"),
+        "solution": MessageLookupByLibrary.simpleMessage("தீர்வு")
       };
 }

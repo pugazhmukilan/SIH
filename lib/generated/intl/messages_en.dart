@@ -26,6 +26,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Create an account"),
         "Haveaccount": MessageLookupByLibrary.simpleMessage("Have an account?"),
         "clickHere": MessageLookupByLibrary.simpleMessage("Click here"),
+        "consult_doctor":
+            MessageLookupByLibrary.simpleMessage("Consult a doctor"),
+        "deficiency": MessageLookupByLibrary.simpleMessage("Deficiency"),
+        "description": MessageLookupByLibrary.simpleMessage("Description"),
         "enterMobileNumber":
             MessageLookupByLibrary.simpleMessage("Enter your mobile number"),
         "enteremailid":
@@ -34,11 +38,19 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enter your password"),
         "enteryourlocation":
             MessageLookupByLibrary.simpleMessage("Enter your location"),
+        "high": MessageLookupByLibrary.simpleMessage("High"),
         "listening": MessageLookupByLibrary.simpleMessage("listening.."),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "low": MessageLookupByLibrary.simpleMessage("Low"),
         "name": MessageLookupByLibrary.simpleMessage("Enter your name"),
         "noAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
-        "sendOtp": MessageLookupByLibrary.simpleMessage("Send OTP")
+        "regenerate": MessageLookupByLibrary.simpleMessage("Re-generate"),
+        "report_of_analysis":
+            MessageLookupByLibrary.simpleMessage("Report of analysis"),
+        "riskLifePrediction":
+            MessageLookupByLibrary.simpleMessage("Risk Life Prediction"),
+        "sendOtp": MessageLookupByLibrary.simpleMessage("Send OTP"),
+        "solution": MessageLookupByLibrary.simpleMessage("Solution")
       };
 }

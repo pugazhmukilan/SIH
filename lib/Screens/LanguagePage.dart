@@ -6,6 +6,7 @@ import 'package:farmer_app/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:farmer_app/generated/l10n.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LanguagePage extends StatefulWidget {
   const LanguagePage({super.key});
@@ -21,6 +22,7 @@ class _LanguagePageState extends State<LanguagePage> {
     setState(() {
       _locale = locale;
     });
+
     MainApp.setLocale(context, locale);
   }
 
@@ -66,7 +68,10 @@ class _LanguagePageState extends State<LanguagePage> {
                           //English
                           padding: EdgeInsets.only(top: 40),
                           child: ElevatedButton(
-                              onPressed: () {
+                              onPressed: () async {
+                                final SharedPreferences prefs =
+                                    await SharedPreferences.getInstance();
+                                await prefs.setString('selectedLanguage', 'en');
                                 onTap:
                                 () => _changeLanguage(Locale('en'));
                                 Navigator.push(
@@ -95,7 +100,10 @@ class _LanguagePageState extends State<LanguagePage> {
                           //Tamil
                           padding: EdgeInsets.only(top: 40),
                           child: ElevatedButton(
-                              onPressed: () {
+                              onPressed: () async {
+                                final SharedPreferences prefs =
+                                    await SharedPreferences.getInstance();
+                                await prefs.setString('selectedLanguage', 'ta');
                                 _changeLanguage(Locale('ta'));
                                 Navigator.push(
                                     context,
@@ -129,7 +137,10 @@ class _LanguagePageState extends State<LanguagePage> {
                           //Telugu
                           padding: EdgeInsets.only(top: 40),
                           child: ElevatedButton(
-                              onPressed: () {
+                              onPressed: () async {
+                                final SharedPreferences prefs =
+                                    await SharedPreferences.getInstance();
+                                await prefs.setString('selectedLanguage', 'kn');
                                 _changeLanguage(Locale('kn'));
                                 Navigator.push(
                                     context,
@@ -154,10 +165,13 @@ class _LanguagePageState extends State<LanguagePage> {
                               )),
                         ),
                         Padding(
-                          //Kanada
+                          //telugu
                           padding: EdgeInsets.only(top: 40),
                           child: ElevatedButton(
-                              onPressed: () {
+                              onPressed: () async {
+                                final SharedPreferences prefs =
+                                    await SharedPreferences.getInstance();
+                                await prefs.setString('selectedLanguage', 'te');
                                 _changeLanguage(Locale('te'));
                                 Navigator.push(
                                     context,
@@ -185,33 +199,43 @@ class _LanguagePageState extends State<LanguagePage> {
                     ),
                     Center(
                       child: Padding(
-                        //Hindi
-                        padding: EdgeInsets.only(top: 40),
-                        child: ElevatedButton(
-                            onPressed: () {
-                              _changeLanguage(Locale('hi'));
+                          //Hindi
+                          padding: EdgeInsets.only(top: 40),
+                          child: ElevatedButton(
+                            onPressed: () async {
+                              final SharedPreferences prefs =
+                                  await SharedPreferences.getInstance();
+                              await prefs.setString('selectedLanguage',
+                                  'hi'); // Save Hindi language preference
+                              // Ensure you await the language saving process
+                              _changeLanguage(
+                                  Locale('hi')); // Apply the new language
                               Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => SignupPage()));
-                            }, //Elevated button for send otp
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SignupPage()),
+                              );
+                            },
                             style: ElevatedButton.styleFrom(
-                                maximumSize: Size(120, 46),
-                                minimumSize: Size(100, 30),
-                                shadowColor: Colors.black,
-                                backgroundColor: klangbutton,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15))),
+                              maximumSize: Size(120, 46),
+                              minimumSize: Size(100, 30),
+                              shadowColor: Colors.black,
+                              backgroundColor: klangbutton,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                            ),
                             child: Center(
                               child: Text(
-                                "हिंदी",
+                                "हिंदी", // Hindi text
                                 style: ktextstyle.copyWith(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w500,
-                                    color: kdarkgreen),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w500,
+                                  color: kdarkgreen,
+                                ),
                               ),
-                            )),
-                      ),
+                            ),
+                          )),
                     ),
                   ],
                 ), //Column of the container

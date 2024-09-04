@@ -3,7 +3,6 @@ import 'package:farmer_app/Screens/Authentication/SignPage.dart';
 import 'package:farmer_app/Screens/Home/HomePage.dart';
 import 'package:farmer_app/Screens/LanguagePage.dart';
 import 'package:farmer_app/bloc/Camera_bloc/camera_bloc.dart';
-
 import 'package:farmer_app/bloc/mic_bloc/mic_bloc.dart';
 import 'package:farmer_app/firebase_options.dart';
 import 'package:farmer_app/generated/l10n.dart';
@@ -11,11 +10,14 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'bloc/bloc/auth_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  //cerate a instance for the shared preference
+  SharedPreferences prefs = await SharedPreferences.getInstance();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -71,7 +73,30 @@ class _MainAppState extends State<MainApp> {
           Locale('te', ''),
           Locale('hi', '')
         ],
-        home: HomePage(), // Use a separate widget for the home screen
+        home: BlocConsumer<AuthBloc, AuthState>(
+          listener: (context, state) {
+            if (state is CheckingForAutoLogger) {
+              CircularProgressIndicator(); // TODO: implement listener
+            }
+            if (state is AutoLoggerNotAvaiable) {
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => LoginPage()),
+                (Route<dynamic> route) =>
+                    false, // This will remove all previous routes
+              );
+            }
+          },
+          builder: (context, state) {
+            if (state is AutoLoggerAvaiable) {
+              context.read<AuthBloc>().add(FirebaseAuthenticateUser(
+                  email: state.email, password: state.password));
+            }
+
+            return LanguagePage();
+          },
+        ), // Use a separate widget for the home screen
+        // Use a separate widget for the home screen
       ),
     );
   }
