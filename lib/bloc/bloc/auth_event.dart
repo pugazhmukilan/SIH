@@ -39,3 +39,5 @@ final class CreateUser extends AuthEvent {
       required this.name,
       required this.location});
 }
+
+final class AutoLoggerCheck extends AuthEvent {}

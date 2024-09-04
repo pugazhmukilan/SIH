@@ -19,3 +19,12 @@ final class FetchingUserInformation extends AuthState {}
 final class DataFetched extends AuthState {}
 
 final class CreatingUserLoading extends AuthState {}
+
+
+final class CheckingForAutoLogger extends AuthState{}
+final class AutoLoggerNotAvaiable extends AuthState{}
+final class AutoLoggerAvaiable extends AuthState{
+  final String email;
+  final String password;
+  AutoLoggerAvaiable({required this.email,required this.password});
+}
