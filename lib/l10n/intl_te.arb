@@ -1,9 +1,15 @@
 {
   "@@locale":"te",
   "login": "లాగిన్ చేయండి",
+  "name":"మీ పేరు నమోదు చేయండి",
   "enterMobileNumber": "మీ మొబైల్ నంబర్ ని ఎంటర్ చేయండి",
+  "enteremailid":"మీ ఇమెయిల్ IDని నమోదు చేయండి",
+  "enterpassword":"మీ పాస్‌వర్డ్‌ను నమోదు చేయండి",
+  "enteryourlocation":"మీ ప్రాంతాన్ని నమోదు చేయండి",
   "sendOtp": "OTP పంపించండి",
   "noAccount": "ఖాతా లేదా?",
   "clickHere": "ఇక్కడ క్లిక్ చేయండి",
-  "listening" :"వినడం"
+  "listening" :"వినడం",
+  "Haveaccount":"ఖాతా ఉందా?",
+  "Createaccount":"ఖాతా సృష్టించండి"
 }

@@ -1,9 +1,15 @@
 {
   "@@locale": "en",
   "login": "Login",
+  "name":"Enter your name",
   "enterMobileNumber": "Enter your mobile number",
+  "enteremailid":"Enter your email id",
+  "enterpassword": "Enter your password",
+  "enteryourlocation":"Enter your location",
   "sendOtp": "Send OTP",
   "noAccount": "Don't have an account?",
   "clickHere": "Click here",
-  "listening": "listening.."
+  "listening": "listening..",
+  "Haveaccount":"Have an account?",
+  "Createaccount":"Create an account"
 }

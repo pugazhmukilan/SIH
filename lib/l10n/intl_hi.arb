@@ -1,9 +1,15 @@
 {
     "@@locale":"hi",
         "login":"लॉग इन करें",
+        "name":"अपना नाम दर्ज करें",
     "enterMobileNumber":"मोबाइल नंबर दर्ज करें",
+    "enteremailid":"अपना ईमेल आईडी दर्ज करें",
+    "enterpassword":"अपना पासवर्ड दर्ज करें",
+    "enteryourlocation":" अपना स्थान दर्ज करें",
    "sendOtp": "ओटीपी भेजें",
     "noAccount":"कोई खाता नहीं है?",
     "clickHere":"यहाँ क्लिक करें",
-    "listening":"सुनना"
+    "listening":"सुनना",
+    "Haveaccount":"खाता है?",
+    "Createaccount":"खाता बनाएं"
 }

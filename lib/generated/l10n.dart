@@ -60,11 +60,51 @@ class S {
     );
   }
 
+  /// `Enter your name`
+  String get name {
+    return Intl.message(
+      'Enter your name',
+      name: 'name',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Enter your mobile number`
   String get enterMobileNumber {
     return Intl.message(
       'Enter your mobile number',
       name: 'enterMobileNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your email id`
+  String get enteremailid {
+    return Intl.message(
+      'Enter your email id',
+      name: 'enteremailid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your password`
+  String get enterpassword {
+    return Intl.message(
+      'Enter your password',
+      name: 'enterpassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your location`
+  String get enteryourlocation {
+    return Intl.message(
+      'Enter your location',
+      name: 'enteryourlocation',
       desc: '',
       args: [],
     );
@@ -105,6 +145,26 @@ class S {
     return Intl.message(
       'listening..',
       name: 'listening',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Have an account?`
+  String get Haveaccount {
+    return Intl.message(
+      'Have an account?',
+      name: 'Haveaccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create an account`
+  String get Createaccount {
+    return Intl.message(
+      'Create an account',
+      name: 'Createaccount',
       desc: '',
       args: [],
     );

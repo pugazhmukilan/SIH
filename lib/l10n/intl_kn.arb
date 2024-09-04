@@ -1,8 +1,14 @@
 {"@@locale":"kn",
   "login": "ಲಾಗಿನ್ ಮಾಡಿ",
+  "name":"ನಿಮ್ಮ ಹೆಸರನ್ನು ನಮೂದಿಸಿ",
   "enterMobileNumber": "ನಿಮ್ಮ ಮೊಬೈಲ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ",
+  "enteremailid":"ನಿಮ್ಮ ಇಮೇಲ್ ಐಡಿಯನ್ನು ನಮೂದಿಸಿ",
+  "enterpassword":"ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ನಮೂದಿಸಿ",
+  "enteryourlocation":"ನಿಮ್ಮ ಸ್ಥಳವನ್ನು ನಮೂದಿಸಿ",
   "sendOtp": "OTP ಕಳುಹಿಸಿ",
   "noAccount": "ಖಾತೆ ಇಲ್ಲವೇ?",
   "clickHere": "ಇಲ್ಲಿ ಕ್ಲಿಕ್ ಮಾಡಿ",
-  "listening": "ಕೇಳುವುದು"
+  "listening": "ಕೇಳುವುದು",
+  "Haveaccount":"ಖಾತೆ ಇದೆಯೆ?",
+  "Createaccount":"ಖಾತೆ ರಚಿಸಿ"
 }

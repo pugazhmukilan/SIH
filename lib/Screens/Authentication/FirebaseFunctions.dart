@@ -9,13 +9,13 @@ class FirebaseAuthService {
   Future<String?> signup({
     required String name,
     required String place,
-    required String phone,
     required String email,
     required String password,
   }) async {
     try {
       // Sign up the user with Firebase Authentication
-      UserCredential userCredential = await _firebaseAuth.createUserWithEmailAndPassword(
+      UserCredential userCredential =
+          await _firebaseAuth.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
@@ -27,7 +27,6 @@ class FirebaseAuthService {
       await _firestore.collection('Users').doc(uid).set({
         'name': name,
         'place': place,
-        'phone': phone,
         'email': email,
       });
 
@@ -47,7 +46,8 @@ class FirebaseAuthService {
   }) async {
     try {
       // Log in the user with Firebase Authentication
-      UserCredential userCredential = await _firebaseAuth.signInWithEmailAndPassword(
+      UserCredential userCredential =
+          await _firebaseAuth.signInWithEmailAndPassword(
         email: email,
         password: password,
       );

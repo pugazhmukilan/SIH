@@ -1,9 +1,15 @@
 {
   "@@locale":"ta",
   "login": "உள்நுழை",
-  "enterMobileNumber": "உங்கள் மொபைல் எண்ணை உள்ளிடுங்கள்",
+  "name":"உங்கள் பெயரை பதிவிடவும்",
+  "enterMobileNumber": "உங்கள் மொபைல் எண்ணை பதிவிடவும்",
+  "enteremailid":" உங்கள் மின்னஞ்சல் ஐடியை பதிவிடவும்",
+  "enterpassword": "உங்கள் கடவுச்சொல்லை பதிவிடவும்",
+  "enteryourlocation":"உங்கள் இடத்தை பதிவிடவும்",
   "sendOtp": "OTP ஐ அனுப்பவும்",
   "noAccount": "கணக்கு இல்லையா?",
-  "clickHere": "இங்கே கிளிக் செய்யவும்",
-  "listening" : "கேட்கும்"
+  "clickHere": "கிளிக் செய்யவும்",
+  "listening" : "கேட்கும்",
+  "Createaccount":"கணக்கை உருவாக்கவும்",
+  "Haveaccount":"கணக்கு உள்ளதா?"
 }

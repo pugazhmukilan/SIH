@@ -1,4 +1,8 @@
 import 'package:farmer_app/Screens/Authentication/LoginPage.dart';
+import 'package:farmer_app/Screens/Authentication/SignPage.dart';
+import 'package:farmer_app/Screens/LanguagePage.dart';
+import 'package:farmer_app/bloc/Camera_bloc/camera_bloc.dart';
+
 import 'package:farmer_app/bloc/mic_bloc/mic_bloc.dart';
 import 'package:farmer_app/firebase_options.dart';
 import 'package:farmer_app/generated/l10n.dart';
@@ -48,24 +52,25 @@ class _MainAppState extends State<MainApp> {
         BlocProvider(
           create: (context) => MicBloc(),
         ),
+        BlocProvider(create: (context) => CameraBloc())
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         locale: _locale,
-        localizationsDelegates: [
+        localizationsDelegates: const [
           S.delegate,
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
         ],
-        supportedLocales: [
+        supportedLocales: const [
           Locale('en', ''),
           Locale('ta', ''),
           Locale('kn', ''),
           Locale('te', ''),
           Locale('hi', '')
         ],
-        home: LoginPage(), // Use a separate widget for the home screen
+        home: LanguagePage(), // Use a separate widget for the home screen
       ),
     );
   }

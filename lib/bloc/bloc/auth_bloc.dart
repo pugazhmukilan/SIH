@@ -13,60 +13,57 @@ part 'auth_state.dart';
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc() : super(AuthInitial()) {
     on<RequestOTP>((event, emit) {
-    SmsService sms = SmsService();
-    sms.sendSms(event.number);
+      SmsService sms = SmsService();
+      sms.sendSms(event.number);
     });
 
-    on<GetUserInformation>((event, emit) async{
-    
-    emit(FetchingUserInformation());
-    await Future.delayed(Duration(seconds: 2));
-    emit((DataFetched()));
-    
-    //emit fetching user infmformation
-    //emit((Fetcheddata()));
+    on<GetUserInformation>((event, emit) async {
+      emit(FetchingUserInformation());
+      await Future.delayed(Duration(seconds: 2));
+      emit((DataFetched()));
 
+      //emit fetching user infmformation
+      //emit((Fetcheddata()));
     });
 
-    on<FirebaseAuthenticateUser>((event,emit)async{
+    on<FirebaseAuthenticateUser>((event, emit) async {
       // call the function to login
       emit((AuthenticationLoading()));
-      String? user = await  FirebaseAuthService().login(email:event.email,password: event.password);
+      String? user = await FirebaseAuthService()
+          .login(email: event.email, password: event.password);
       print(user);
       print("++++++++++++++++++++++++++++++++++++");
-      if(user != null){
+      if (user != null) {
         //call fetch data event
         ID = user;
         emit((AuthenticationSuccessfull()));
+      } else {
+        emit((AuthenticationFailed(error: "Invalid Credentials")));
       }
-      else{
-      emit((AuthenticationFailed(error: "Invalid Credentials")));
-      }
-      });
+    });
 
-    on<CreateUser>((event,emit)async{
-      emit((AuthenticationLoading()));
-      String? user = await FirebaseAuthService().signup(name: event.name, place: event.location, phone: event.number, email: event.email, password: event.password);
+    on<CreateUser>((event, emit) async {
+      emit((CreatingUserLoading()));
+      String? user = await FirebaseAuthService().signup(
+          name: event.name,
+          place: event.location,
+          email: event.email,
+          password: event.password);
       print(user);
       print("++++++++++++++++++++++++++++++++++++");
-      if(user != null){
+      if (user != null) {
         ID = user;
         emit((AuthenticationSuccessfull()));
-
-      }else{
+      } else {
         emit((AuthenticationFailed(error: "Failed to create user")));
       }
     });
   }
-
-  
 }
 
-
-
-
 class SmsService {
-  final String _baseUrl = 'https://verify.twilio.com/v2/Services/VAf3a01df767de801c799c4d3106999f49';
+  final String _baseUrl =
+      'https://verify.twilio.com/v2/Services/VAf3a01df767de801c799c4d3106999f49';
   final String _accountSid = 'AC027bb3997058fbb128ace2a100806e0c';
   final String _authToken = 'd2afec6ecd89c731d7a87e29c3e4ee62';
 
@@ -74,8 +71,10 @@ class SmsService {
     final response = await http.post(
       Uri.parse('$_baseUrl/Verifications'),
       headers: {
-        'Authorization': 'Basic ' + base64Encode(utf8.encode('$_accountSid:$_authToken')),
-        'Content-Type': 'application/x-www-form-urlencoded', // Ensure the correct content type
+        'Authorization':
+            'Basic ' + base64Encode(utf8.encode('$_accountSid:$_authToken')),
+        'Content-Type':
+            'application/x-www-form-urlencoded', // Ensure the correct content type
       },
       body: {
         'To': '+91${to}', // Ensure the phone number is in E.164 format
@@ -94,8 +93,10 @@ class SmsService {
     final response = await http.post(
       Uri.parse('$_baseUrl/VerificationCheck'),
       headers: {
-        'Authorization': 'Basic ' + base64Encode(utf8.encode('$_accountSid:$_authToken')),
-        'Content-Type': 'application/x-www-form-urlencoded', // Ensure the correct content type
+        'Authorization':
+            'Basic ' + base64Encode(utf8.encode('$_accountSid:$_authToken')),
+        'Content-Type':
+            'application/x-www-form-urlencoded', // Ensure the correct content type
       },
       body: {
         'To': '+$to', // Ensure the phone number is in E.164 format

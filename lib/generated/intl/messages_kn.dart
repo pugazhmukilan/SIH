@@ -22,11 +22,20 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "Createaccount": MessageLookupByLibrary.simpleMessage("ಖಾತೆ ರಚಿಸಿ"),
+        "Haveaccount": MessageLookupByLibrary.simpleMessage("ಖಾತೆ ಇದೆಯೆ?"),
         "clickHere": MessageLookupByLibrary.simpleMessage("ಇಲ್ಲಿ ಕ್ಲಿಕ್ ಮಾಡಿ"),
         "enterMobileNumber": MessageLookupByLibrary.simpleMessage(
             "ನಿಮ್ಮ ಮೊಬೈಲ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ"),
+        "enteremailid": MessageLookupByLibrary.simpleMessage(
+            "ನಿಮ್ಮ ಇಮೇಲ್ ಐಡಿಯನ್ನು ನಮೂದಿಸಿ"),
+        "enterpassword": MessageLookupByLibrary.simpleMessage(
+            "ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ನಮೂದಿಸಿ"),
+        "enteryourlocation":
+            MessageLookupByLibrary.simpleMessage("ನಿಮ್ಮ ಸ್ಥಳವನ್ನು ನಮೂದಿಸಿ"),
         "listening": MessageLookupByLibrary.simpleMessage("ಕೇಳುವುದು"),
         "login": MessageLookupByLibrary.simpleMessage("ಲಾಗಿನ್ ಮಾಡಿ"),
+        "name": MessageLookupByLibrary.simpleMessage("ನಿಮ್ಮ ಹೆಸರನ್ನು ನಮೂದಿಸಿ"),
         "noAccount": MessageLookupByLibrary.simpleMessage("ಖಾತೆ ಇಲ್ಲವೇ?"),
         "sendOtp": MessageLookupByLibrary.simpleMessage("OTP ಕಳುಹಿಸಿ")
       };

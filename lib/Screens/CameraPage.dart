@@ -1,7 +1,7 @@
 import 'package:camera/camera.dart';
 import 'package:farmer_app/Constants/Colors.dart';
 import 'package:farmer_app/Constants/Text.dart';
-import 'package:farmer_app/Screens/LoginPage.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
@@ -175,11 +175,13 @@ class _CameraPageState extends State<CameraPage> {
                                       Border.all(color: kdarkgreen, width: 2)),
                               child: ElevatedButton(
                                   onPressed: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                CameraPage()));
+                                    Navigator.pushAndRemoveUntil(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => CameraPage()),
+                                      (Route<dynamic> route) =>
+                                          false, // This will remove all previous routes
+                                    );
                                   }, //Elevated button for  regenerate
                                   style: ElevatedButton.styleFrom(
                                       maximumSize: Size(139, 50),

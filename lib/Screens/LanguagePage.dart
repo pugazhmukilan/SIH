@@ -1,6 +1,7 @@
 import 'package:farmer_app/Constants/Colors.dart';
 import 'package:farmer_app/Constants/Text.dart';
-import 'package:farmer_app/Screens/LoginPage.dart';
+import 'package:farmer_app/Screens/Authentication/SignPage.dart';
+
 import 'package:farmer_app/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -71,7 +72,7 @@ class _LanguagePageState extends State<LanguagePage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => LoginPage()));
+                                        builder: (context) => SignupPage()));
                               }, //Elevated button for send otp
                               style: ElevatedButton.styleFrom(
                                   maximumSize: Size(120, 46),
@@ -99,7 +100,7 @@ class _LanguagePageState extends State<LanguagePage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => LoginPage()));
+                                        builder: (context) => SignupPage()));
                               }, //Elevated button for send otp
                               style: ElevatedButton.styleFrom(
                                   maximumSize: Size(120, 46),
@@ -133,7 +134,7 @@ class _LanguagePageState extends State<LanguagePage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => LoginPage()));
+                                        builder: (context) => SignupPage()));
                               }, //Elevated button for send otp
                               style: ElevatedButton.styleFrom(
                                   maximumSize: Size(120, 46),
@@ -161,7 +162,7 @@ class _LanguagePageState extends State<LanguagePage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => LoginPage()));
+                                        builder: (context) => SignupPage()));
                               }, //Elevated button for send otp
                               style: ElevatedButton.styleFrom(
                                   maximumSize: Size(120, 46),
@@ -192,7 +193,7 @@ class _LanguagePageState extends State<LanguagePage> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => LoginPage()));
+                                      builder: (context) => SignupPage()));
                             }, //Elevated button for send otp
                             style: ElevatedButton.styleFrom(
                                 maximumSize: Size(120, 46),
