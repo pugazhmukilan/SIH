@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:bloc/bloc.dart';
-import 'package:camera/camera.dart';
-import 'package:meta/meta.dart';
 import 'package:http/http.dart' as Http;
+import 'package:meta/meta.dart';
+
 part 'camera_event.dart';
 part 'camera_state.dart';
 

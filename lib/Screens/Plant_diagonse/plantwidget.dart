@@ -1,5 +1,4 @@
-import 'package:farmer_app/Screens/CameraPage.dart';
-import 'package:farmer_app/bloc/Camera_bloc/camera_bloc.dart';
+// import 'package:farmer_app/Screens/CameraPage.dart';
 import 'package:flutter/material.dart';
 
 class PlantWidget extends StatelessWidget {
@@ -18,8 +17,8 @@ class PlantWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => CameraPage()));
+        // Navigator.push(
+        //     context, MaterialPageRoute(builder: (context) => CameraPage()));
       },
       child: Container(
         decoration: BoxDecoration(
